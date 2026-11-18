@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffe3ec">
+<title>To My Baby 💗</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; overflow-x: hidden;
+    font-family: "Segoe UI", system-ui, sans-serif; color: #71384d;
+    background: radial-gradient(circle at top, #fff7fa 0, #ffe3ec 48%, #ffd1e0 100%);
+    display: grid; place-items: center; padding: 28px 16px;
+  }
+  .hearts { position: fixed; inset: 0; overflow: hidden; pointer-events: none; }
+  .heart { position: absolute; bottom: -40px; color: #f28aaa; opacity: .45;
+    animation: float 10s linear infinite; font-size: 20px; }
+  .heart:nth-child(1){left:8%;animation-delay:0s}
+  .heart:nth-child(2){left:25%;animation-delay:3s;font-size:28px}
+  .heart:nth-child(3){left:52%;animation-delay:1s}
+  .heart:nth-child(4){left:76%;animation-delay:5s;font-size:26px}
+  .heart:nth-child(5){left:91%;animation-delay:2s}
+  @keyframes float { to { transform: translateY(-115vh) rotate(25deg); opacity: 0; } }
+  .card {
+    width: min(100%, 510px); position: relative; z-index: 1; text-align: center;
+    padding: 34px 27px; border: 1px solid rgba(255,255,255,.85);
+    border-radius: 28px; background: rgba(255,255,255,.78);
+    box-shadow: 0 18px 55px rgba(169,75,109,.15); backdrop-filter: blur(8px);
+  }
+  .stamp { font-size: 48px; margin-bottom: 8px; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 3px; font-size: 11px; color: #c16b89; font-weight: 700; }
+  h1 { font-family: Georgia, serif; font-size: clamp(36px, 9vw, 54px); margin: 10px 0 8px; color: #c6537b; }
+  .subtitle { margin: 0 0 24px; color: #986477; }
+  .letter {
+    text-align: left; line-height: 1.8; font-size: 15px; background: #fff8fb;
+    border-radius: 18px; padding: 22px; border: 1px solid #f9d8e4;
+  }
+  .letter p { margin: 0 0 14px; }
+  .letter p:last-child { margin-bottom: 0; }
+  button {
+    border: 0; border-radius: 999px; padding: 13px 23px; margin-top: 22px;
+    background: #d95f89; color: white; font-size: 15px; font-weight: 700;
+    cursor: pointer; box-shadow: 0 7px 18px rgba(217,95,137,.25);
+    transition: transform .2s, background .2s;
+  }
+  button:hover { transform: translateY(-2px); background: #c94e79; }
+  .secret { display: none; margin-top: 18px; padding: 17px; border-radius: 16px;
+    background: #ffedf3; line-height: 1.7; animation: appear .45s ease; }
+  .secret.show { display: block; }
+  @keyframes appear { from {opacity:0; transform:translateY(8px)} to {opacity:1;transform:translateY(0)} }
+  .signature { margin-top: 23px; font-family: Georgia, serif; font-style: italic; color: #c6537b; }
+  .tiny { font-size: 12px; color: #b17b90; margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="hearts" aria-hidden="true">
+  <span class="heart">♥</span><span class="heart">♥</span><span class="heart">♡</span>
+  <span class="heart">♥</span><span class="heart">♡</span>
+</div>
+<main class="card">
+  <div class="stamp">💌</div>
+  <div class="eyebrow">A little love letter for you</div>
+  <h1>To My Baby</h1>
+  <p class="subtitle">For the girl who makes my days sweeter. 💗</p>
+
+  <section class="letter">
+    <p>Hi babyyy! 🥺💕</p>
+    <p>I'm just a boy that you met online, pero I hope I can be someone who makes you feel loved, appreciated, and special. Hindi man ako perfect, and sometimes I overthink and get jealous over little things, pero I promise na genuine lahat ng feelings ko for you.</p>
+    <p>I may not be physically beside you right now, pero please know na real lahat ng nararamdaman ko. I hope you'll let me love you for a long time, kasi ayokong maging basta someone you met online lang. I want to be someone na pipiliin mo araw-araw, someone na you can always count on.</p>
+    <p>I hope we make this online love story last hanggang sa maging magkasama na tayo in person. Until that day comes, I'll keep choosing you and loving you from here. ❤️</p>
+  </section>
+
+  <button id="surprise" type="button">Tap for a little surprise 💗</button>
+  <div class="secret" id="secret">
+    If I could wish for one thing, it would be more time with you — more kwentos, more laughs, more memories, and someday, a real hug. I love youuu, baby. Mwaaaa! 🥹💞
+  </div>
+  <div class="signature">Always yours, with love. ♡</div>
+  <div class="tiny">Made with love, just for you.</div>
+</main>
+<script>
+  const button = document.getElementById('surprise');
+  const secret = document.getElementById('secret');
+  button.addEventListener('click', () => {
+    secret.classList.toggle('show');
+    button.textContent = secret.classList.contains('show')
+      ? 'A little more love for you 💕'
+      : 'Tap for a little surprise 💗';
+  });
+</script>
+</body>
+</html>
